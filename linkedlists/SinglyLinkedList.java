@@ -1,7 +1,5 @@
 package linkedlists;
 
-import java.io.Console;
-
 public class SinglyLinkedList<T> {
   // Attributes
   private Node<T> head;
@@ -117,9 +115,23 @@ public class SinglyLinkedList<T> {
     }
     Node<T> temp = currentNode.next;
     currentNode.next = currentNode.next.next;
-    temp = null;
+    temp.next = null;
     length--;
 
+  }
+
+  public void reverse() {
+    Node<T> currentNode = head;
+    tail = currentNode;
+    Node<T> prevNode = null, nextNode = null;
+    while (currentNode != null) {
+      nextNode = currentNode.next;
+      currentNode.next = prevNode;
+      prevNode = currentNode;
+      currentNode = nextNode;
+    }
+
+    head = prevNode;
   }
 
   public void printList() {

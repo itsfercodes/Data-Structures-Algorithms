@@ -45,5 +45,15 @@ public class Main {
     System.out.println("List head: " + myFirstList.getHead().data);
     System.out.println("List tail: " + myFirstList.getTail().data);
 
+    myFirstList.append(12);
+    myFirstList.append(99);
+    myFirstList.append(144);
+
+    myFirstList.printList();
+    myFirstList.reverse();
+    myFirstList.printList();
+    System.out.println("List head: " + myFirstList.getHead().data);
+    System.out.println("List tail: " + myFirstList.getTail().data);
+
   }
 }
